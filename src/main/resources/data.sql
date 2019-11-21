@@ -1,4 +1,9 @@
 DELETE FROM Ingredient;
+DELETE FROM Taco;
+DELETE FROM Taco_Ingredients;
+DELETE FROM Taco_Order;
+DELETE FROM Taco_Order_Tacos;
+
 
 INSERT INTO Ingredient (id, name, type) VALUES ('FLTO', 'Flour Tortilla', 'WRAP');
 INSERT INTO Ingredient (id, name, type) VALUES ('COTO', 'Corn Tortilla', 'WRAP');
