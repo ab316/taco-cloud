@@ -17,11 +17,11 @@ CREATE TABLE IF NOT EXISTS Taco_Ingredients (
 
 CREATE TABLE IF NOT EXISTS Taco_Order (
     id              IDENTITY,
-    deliveryName    VARCHAR(50) NOT NULL,
-    deliveryStreet  VARCHAR(50) NOT NULL,
-    deliveryCity    VARCHAR(50) NOT NULL,
-    deliveryState   VARCHAR(2)  NOT NULL,
-    deliveryZip     VARCHAR(10) NOT NULL,
+    name            VARCHAR(50) NOT NULL,
+    street          VARCHAR(50) NOT NULL,
+    city            VARCHAR(50) NOT NULL,
+    state           VARCHAR(50)  NOT NULL,
+    zip             VARCHAR(10) NOT NULL,
     ccNumber        VARCHAR(16) NOT NULL,
     ccExpiration    VARCHAR(5)  NOT NULL,
     ccCVV           VARCHAR(3)  NOT NULL,
