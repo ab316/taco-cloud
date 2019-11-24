@@ -10,6 +10,10 @@
 
 <body>
 <h1> Welcome to...</h1>
-<img th:src="@{/images/taco-cloud.jpg}" width="120px" height="120px" />
+<img th:src="@{/images/taco-cloud.jpg}" width="120px" height="120px"/>
+
+<form method="post" th:action="@{/logout}">
+    <input type="submit" value="Logout"/>
+</form>
 </body>
 </html>
