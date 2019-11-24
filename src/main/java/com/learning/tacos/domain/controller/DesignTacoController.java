@@ -1,11 +1,11 @@
-package com.learning.tacos.controller;
+package com.learning.tacos.domain.controller;
 
-import com.learning.tacos.data.IngredientRepository;
-import com.learning.tacos.data.TacoRepository;
-import com.learning.tacos.model.Ingredient;
-import com.learning.tacos.model.Ingredient.Type;
-import com.learning.tacos.model.Order;
-import com.learning.tacos.model.Taco;
+import com.learning.tacos.domain.data.IngredientRepository;
+import com.learning.tacos.domain.data.TacoRepository;
+import com.learning.tacos.domain.model.Ingredient;
+import com.learning.tacos.domain.model.Ingredient.Type;
+import com.learning.tacos.domain.model.Order;
+import com.learning.tacos.domain.model.Taco;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

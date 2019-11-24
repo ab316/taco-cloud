@@ -1,7 +1,7 @@
 package com.learning.tacos.converter;
 
-import com.learning.tacos.data.IngredientRepository;
-import com.learning.tacos.model.Ingredient;
+import com.learning.tacos.domain.data.IngredientRepository;
+import com.learning.tacos.domain.model.Ingredient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

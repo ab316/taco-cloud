@@ -1,4 +1,4 @@
-package com.learning.tacos.controller;
+package com.learning.tacos.conf;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

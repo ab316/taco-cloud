@@ -1,7 +1,7 @@
-package com.learning.tacos.controller;
+package com.learning.tacos.domain.controller;
 
-import com.learning.tacos.data.OrderRepository;
-import com.learning.tacos.model.Order;
+import com.learning.tacos.domain.data.OrderRepository;
+import com.learning.tacos.domain.model.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

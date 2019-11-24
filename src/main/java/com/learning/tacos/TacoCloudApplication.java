@@ -1,13 +1,13 @@
 package com.learning.tacos;
 
-import com.learning.tacos.data.IngredientRepository;
-import com.learning.tacos.model.Ingredient;
+import com.learning.tacos.domain.data.IngredientRepository;
+import com.learning.tacos.domain.model.Ingredient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import static com.learning.tacos.model.Ingredient.Type;
+import static com.learning.tacos.domain.model.Ingredient.Type;
 
 @SpringBootApplication
 public class TacoCloudApplication {
