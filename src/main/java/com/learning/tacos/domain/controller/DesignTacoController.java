@@ -6,8 +6,10 @@ import com.learning.tacos.domain.model.Ingredient;
 import com.learning.tacos.domain.model.Ingredient.Type;
 import com.learning.tacos.domain.model.Order;
 import com.learning.tacos.domain.model.Taco;
+import com.learning.tacos.security.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -18,10 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Slf4j
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("order")
+@Slf4j
 public class DesignTacoController {
 
     @Autowired
@@ -32,7 +34,6 @@ public class DesignTacoController {
 
     @GetMapping
     public String showDesignForm(Model model) {
-        model.addAttribute("design", new Taco());
         return "design";
     }
 
@@ -54,8 +55,15 @@ public class DesignTacoController {
     }
 
     @ModelAttribute(name = "order")
-    public Order order() {
-        return new Order();
+    public Order order(@AuthenticationPrincipal User user) {
+        Order order = new Order();
+        order.setUser(user);
+        order.setName(user.getFullName());
+        order.setStreet(user.getStreet());
+        order.setState(user.getState());
+        order.setCity(user.getCity());
+        order.setZip(user.getZip());
+        return order;
     }
 
     @ModelAttribute

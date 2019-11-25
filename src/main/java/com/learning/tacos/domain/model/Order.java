@@ -1,5 +1,6 @@
 package com.learning.tacos.domain.model;
 
+import com.learning.tacos.security.User;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
@@ -45,6 +46,9 @@ public class Order {
 
     @ManyToMany(targetEntity = Taco.class)
     private List<Taco> tacos = new ArrayList<>();
+
+    @ManyToOne
+    private User user;
 
     private Instant placedAt;
 
