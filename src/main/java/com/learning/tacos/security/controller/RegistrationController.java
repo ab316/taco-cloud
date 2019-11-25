@@ -1,7 +1,7 @@
 package com.learning.tacos.security.controller;
 
 import com.learning.tacos.security.model.RegistrationForm;
-import com.learning.tacos.security.UserRepository;
+import com.learning.tacos.security.data.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -2,11 +2,8 @@ package com.learning.tacos.domain.controller;
 
 import com.learning.tacos.domain.data.OrderRepository;
 import com.learning.tacos.domain.model.Order;
-import com.learning.tacos.security.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;

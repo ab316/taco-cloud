@@ -6,7 +6,7 @@ import com.learning.tacos.domain.model.Ingredient;
 import com.learning.tacos.domain.model.Ingredient.Type;
 import com.learning.tacos.domain.model.Order;
 import com.learning.tacos.domain.model.Taco;
-import com.learning.tacos.security.User;
+import com.learning.tacos.security.data.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

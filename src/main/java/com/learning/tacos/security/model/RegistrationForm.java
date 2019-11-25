@@ -1,6 +1,6 @@
 package com.learning.tacos.security.model;
 
-import com.learning.tacos.security.User;
+import com.learning.tacos.security.data.User;
 import lombok.Data;
 import org.springframework.security.crypto.password.PasswordEncoder;
 

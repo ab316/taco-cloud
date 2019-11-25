@@ -1,6 +1,6 @@
 package com.learning.tacos.domain.model;
 
-import com.learning.tacos.security.User;
+import com.learning.tacos.security.data.User;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 

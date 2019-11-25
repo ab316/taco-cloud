@@ -1,4 +1,4 @@
-package com.learning.tacos.security;
+package com.learning.tacos.security.data;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,4 +1,4 @@
-package com.learning.tacos.security;
+package com.learning.tacos.security.data;
 
 import lombok.AccessLevel;
 import lombok.Data;
