@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+logging:
+  path: /var/logs/
+  file: tacoCloud.log
+
+  level:
+    root: WARN
+    com.learning: DEBUG
+
+taco:
+  orders:
+    pageSize: 10
