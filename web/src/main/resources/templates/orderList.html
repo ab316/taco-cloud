@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Taco Cloud</title>
+
+    <style>
+        table, tr {
+            width: 75%;
+            padding: 15px;
+            border-spacing: 5px;
+            border: 1px solid black;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Order List</h1>
+<img th:src="@{/images/taco-cloud.jpg}" width="120px" height="120px" />
+
+<div class="grid">
+    <div class="ingredient-group" id="wraps">
+        <span>You most recent </span> <span th:text="${orders.size()}"></span> <span> orders:</span>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>Tacos</th>
+            </tr>
+            <tr th:each="o : ${orders}">
+                <td th:text="${o.id}">ID</td>
+                <td th:text="${o.name}">NAME</td>
+                <td th:text="${o.street}">STREET</td>
+                <td th:text="${o.city}">CITY</td>
+                <td th:text="${o.state}">STATE</td>
+                <td th:text="${o.zip}">ZIP</td>
+                <td th:text="${o.tacos.size()}">ID</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<form method="post" th:action="@{/logout}">
+    <input type="submit" value="Logout" />
+</form>
+</body>
+</html>

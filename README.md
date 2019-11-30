@@ -24,3 +24,9 @@ The following features are currently present in the application
 * User registration / login
 * Design Taco MVC
 * Order Tacos MVC
+
+## To Run
+```
+mvn clean install
+mvn spring-boot:run -f app
+```

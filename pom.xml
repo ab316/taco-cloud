@@ -4,14 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.learning</groupId>
-	<artifactId>taco-cloud</artifactId>
+	<artifactId>tacocloud-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>taco-cloud</name>
-	<description>Taco Cloud application</description>
+	<packaging>pom</packaging>
 
-	<properties>
-		<java.version>11</java.version>
-	</properties>
+	<name>tacocloud-parent</name>
+	<description>Taco parent POM file</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -19,6 +17,19 @@
 		<version>2.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+	<properties>
+		<java.version>11</java.version>
+		<tacocloud.version>${project.version}</tacocloud.version>
+	</properties>
+
+	<modules>
+		<module>domain</module>
+		<module>data</module>
+		<module>security</module>
+		<module>web</module>
+		<module>app</module>
+	</modules>
 
 	<dependencies>
 		<dependency>
@@ -73,14 +84,5 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
