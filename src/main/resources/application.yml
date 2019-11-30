@@ -6,7 +6,7 @@ logging:
   file: tacoCloud.log
 
   level:
-    root: WARN
+    root: INFO
     com.learning: DEBUG
 
 taco:
