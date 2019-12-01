@@ -9,6 +9,11 @@ logging:
     root: INFO
     com.learning: DEBUG
 
+spring:
+  data:
+    rest:
+      base-path: /api
+
 taco:
   orders:
     pageSize: 10

@@ -1,6 +1,7 @@
 package com.learning.tacos.domain;
 
 import lombok.Data;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Data
 @Entity
+@RestResource(rel = "tacos", path = "tacos")
 public class Taco {
     public static final String COLUMN_CREATED_AT = "createdAt";
 
