@@ -32,7 +32,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/design", "/orders/**").hasRole("USER")
+//                .antMatchers("/design", "/orders/**").hasRole("USER")
+                .antMatchers("/design", "/orders/**", "/api/**").permitAll()
                 .antMatchers("/", "/**").permitAll();
 
         http.formLogin()
@@ -42,9 +43,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.logout()
                 .logoutSuccessUrl("/");
 
-        // Needed for H2 console
+        // Needed for H2 console and (for now) the REST api
         http.csrf()
-                .ignoringAntMatchers("/h2-console/**");
+                .ignoringAntMatchers("/h2-console/**", "/api/**");
 
         // Needed for H2 console
         http.headers()

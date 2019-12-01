@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>tacocloud-application</artifactId>
+	<artifactId>tacocloud-api</artifactId>
 	<packaging>jar</packaging>
 
-	<name>tacocloud-application</name>
-	<description>TacoCloud Application</description>
+	<name>tacocloud-api</name>
+	<description>TacoCloud REST API</description>
 
 	<parent>
 		<groupId>com.learning</groupId>
@@ -29,31 +29,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.learning</groupId>
-			<artifactId>tacocloud-security</artifactId>
-			<version>${tacocloud.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.learning</groupId>
-			<artifactId>tacocloud-web</artifactId>
-			<version>${tacocloud.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.learning</groupId>
-			<artifactId>tacocloud-api</artifactId>
-			<version>${tacocloud.version}</version>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>

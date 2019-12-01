@@ -12,6 +12,8 @@ import java.util.List;
 @Data
 @Entity
 public class Taco {
+    public static final String COLUMN_CREATED_AT = "createdAt";
+
     @Id
     @GeneratedValue
     private Long id;
