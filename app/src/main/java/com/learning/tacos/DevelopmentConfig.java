@@ -59,15 +59,15 @@ public class DevelopmentConfig {
             userRepository.save(user);
 
             for (int i=0; i<30; i++) {
-                Order order = makeOrder("taco " + i, user, tacoRepository, ingredientRepository);
+                Order order = makeOrder("order " + i, user, tacoRepository, ingredientRepository);
                 orderRepository.save(order);
             }
         };
     }
 
-    private Taco makeTaco(IngredientRepository ingredientRepository) {
+    private Taco makeTaco(String name, IngredientRepository ingredientRepository) {
         Taco taco = new Taco();
-        taco.setName("taco 1");
+        taco.setName(name);
         taco.setIngredients(new ArrayList<>());
 
         List<Ingredient> allIngredientList = new ArrayList<>();
@@ -103,7 +103,7 @@ public class DevelopmentConfig {
 
         int numTacos = random.nextInt(5) + 1;
         for (int i = 0; i < numTacos; i++) {
-            Taco taco = tacoRepository.save(makeTaco(ingredientRepository));
+            Taco taco = tacoRepository.save(makeTaco("taco " + i, ingredientRepository));
             order.getTacos().add(taco);
         }
 

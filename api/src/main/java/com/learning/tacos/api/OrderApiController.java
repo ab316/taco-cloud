@@ -85,7 +85,6 @@ public class OrderApiController {
     public void deleteOrder(@PathVariable Long orderId) {
         try {
             orderRepository.deleteById(orderId);
-        } catch (EmptyResultDataAccessException ignored) {
-        }
+        } catch (EmptyResultDataAccessException ignored) { }
     }
 }
