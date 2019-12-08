@@ -6,34 +6,42 @@ Taco Cloud is a sample application from the book Spring in Action, 5th Edition b
 It is a website that allows users to design their custom tacos and order them online.
 The application is only a prototype that follows what is taught in the book.
 
-Taco Cloud uses the following technologies:
+Taco Kitchen is a supplementary application that listens for Order messages from the Taco Cloud application.
+
+The project uses the following technologies:
 * Java 11
 * Maven
 * Spring Boot 2
 * H2 in-memory database
 * Thymeleaf
+* JMS (Artemis)
 
-The application demonstrates the following:
+The project demonstrates the following:
 * Spring MVC using Thymeleaf
 * Spring Security with JPA based user credentials
 * Spring Profiles (different application properties for dev/qa/prod)
+* Spring JMS messaging with Artemis
 
 
 ## Application
-The following features are currently present in the application
+The following features are currently present in the project
 * User registration / login
 * Design Taco MVC
 * Order Tacos MVC
+* Messaging from Taco Cloud to Taco Kitchen
 
 ## To Run
-
-### The Application
+### Taco Cloud
 ```
-mvn clean install
 mvn spring-boot:run -f app
 ```
 
-### Active MQ
+### Taco Kitchen
+```
+mvn spring-boot:run -f kitchen
+```
+
+### Artemis Docker Container
 ```
 docker run -it -d --rm \
 -e ARTEMIS_USERNAME=admin -e ARTEMIS_PASSWORD=admin \
