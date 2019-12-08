@@ -3,6 +3,7 @@ package com.learning.tacos.api;
 import com.learning.tacos.data.OrderRepository;
 import com.learning.tacos.domain.Order;
 import com.learning.tacos.messaging.OrderMessagingService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.PersistentEntityResource;
 import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RepositoryRestController
 @RequestMapping(path = "/orders", produces = "application/hal+json")
+@Slf4j
 public class OrdersApiController {
 
     private final OrderRepository orderRepository;
@@ -32,6 +34,7 @@ public class OrdersApiController {
             @RequestBody Order order,
             PersistentEntityResourceAssembler assembler) {
         Order newOrder = orderRepository.save(order);
+        log.info("Order [{}] sent to the kitchen", newOrder.getId());
         orderMessagingService.sendOrder(newOrder);
         return ResponseEntity.status(HttpStatus.CREATED).body(new EntityModel<>(assembler.toModel(newOrder)));
     }
