@@ -1,5 +1,6 @@
 package com.learning.tacos.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
@@ -7,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,9 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "Taco_Order")
-public class Order {
+public class Order implements Serializable {
+    public static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue
     private Long id;
@@ -47,6 +51,7 @@ public class Order {
     private List<Taco> tacos = new ArrayList<>();
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
     private Instant placedAt;

@@ -27,6 +27,9 @@
 		<module>domain</module>
 		<module>data</module>
 		<module>security</module>
+		<module>messaging-common</module>
+		<module>messaging-artemis</module>
+		<module>kitchen</module>
 		<module>web</module>
 		<module>api</module>
 		<module>app</module>

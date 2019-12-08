@@ -26,7 +26,17 @@ The following features are currently present in the application
 * Order Tacos MVC
 
 ## To Run
+
+### The Application
 ```
 mvn clean install
 mvn spring-boot:run -f app
+```
+
+### Active MQ
+```
+docker run -it -d --rm \
+-e ARTEMIS_USERNAME=admin -e ARTEMIS_PASSWORD=admin \
+-p 8161:8161 -p 61616:61616 \
+--name artemis vromero/activemq-artemis
 ```

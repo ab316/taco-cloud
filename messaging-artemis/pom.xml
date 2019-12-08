@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>tacocloud-api</artifactId>
+	<artifactId>tacocloud-messaging-artemis</artifactId>
 	<packaging>jar</packaging>
 
-	<name>tacocloud-api</name>
-	<description>TacoCloud REST API</description>
+	<name>tacocloud-messaging-artemis</name>
+	<description>JMS messaging for TacoCloud</description>
 
 	<parent>
 		<groupId>com.learning</groupId>
@@ -24,25 +24,13 @@
 
 		<dependency>
 			<groupId>com.learning</groupId>
-			<artifactId>tacocloud-data</artifactId>
-			<version>${tacocloud.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.learning</groupId>
 			<artifactId>tacocloud-messaging-common</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.learning</groupId>
-			<artifactId>tacocloud-messaging-artemis</artifactId>
-			<version>${tacocloud.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-hateoas</artifactId>
+			<artifactId>spring-boot-starter-artemis</artifactId>
 		</dependency>
 	</dependencies>
 

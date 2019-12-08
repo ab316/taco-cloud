@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>tacocloud-api</artifactId>
+	<artifactId>tacocloud-kitchen</artifactId>
 	<packaging>jar</packaging>
 
-	<name>tacocloud-api</name>
-	<description>TacoCloud REST API</description>
+	<name>tacocloud-kitchen</name>
+	<description>Kitchen for TacoCloud</description>
 
 	<parent>
 		<groupId>com.learning</groupId>
@@ -39,11 +39,15 @@
 			<artifactId>tacocloud-messaging-artemis</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-hateoas</artifactId>
-		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
