@@ -10,14 +10,14 @@
 	<description>Data repositories for TacoCloud</description>
 
 	<parent>
-		<groupId>com.learning</groupId>
+		<groupId>com.learning.tacocloud</groupId>
 		<artifactId>tacocloud-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.learning</groupId>
+			<groupId>com.learning.tacocloud</groupId>
 			<artifactId>tacocloud-domain</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>

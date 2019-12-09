@@ -10,26 +10,26 @@
 	<description>TacoCloud REST API</description>
 
 	<parent>
-		<groupId>com.learning</groupId>
+		<groupId>com.learning.tacocloud</groupId>
 		<artifactId>tacocloud-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.learning</groupId>
+			<groupId>com.learning.tacocloud</groupId>
 			<artifactId>tacocloud-domain</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.learning</groupId>
+			<groupId>com.learning.tacocloud</groupId>
 			<artifactId>tacocloud-data</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.learning</groupId>
+			<groupId>com.learning.tacocloud</groupId>
 			<artifactId>tacocloud-messaging-common</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>

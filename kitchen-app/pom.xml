@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>tacocloud-messaging-artemis</artifactId>
+	<artifactId>tacocloud-kitchen-app</artifactId>
 	<packaging>jar</packaging>
 
-	<name>tacocloud-messaging-artemis</name>
-	<description>JMS messaging for TacoCloud</description>
+	<name>tacocloud-kitchen-app</name>
+	<description>Kitchen application for TacoCloud</description>
 
 	<parent>
 		<groupId>com.learning.tacocloud</groupId>
@@ -24,14 +24,30 @@
 
 		<dependency>
 			<groupId>com.learning.tacocloud</groupId>
+			<artifactId>tacocloud-data</artifactId>
+			<version>${tacocloud.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.learning.tacocloud</groupId>
 			<artifactId>tacocloud-messaging-common</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-artemis</artifactId>
+			<groupId>com.learning.tacocloud</groupId>
+			<artifactId>tacocloud-messaging-artemis</artifactId>
+			<version>${tacocloud.version}</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

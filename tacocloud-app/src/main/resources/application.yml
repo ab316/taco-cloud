@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+logging:
+  path: /var/logs/
+  file: tacoCloud.log
+
+  level:
+    root: INFO
+    com.learning.tacocloud: DEBUG
+
+spring:
+  data:
+    rest:
+      base-path: /api
+
+  #jms:
+  #  template:
+  #    default-destination: tacocloud.order.queue
+
+  artemis:
+    host: localhost
+    port: 61616
+    user: admin
+    password: admin
+    mode: native
+
+taco:
+  orders:
+    pageSize: 10
