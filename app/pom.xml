@@ -47,6 +47,25 @@
 		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>artemis</id>
+			<activation>
+				<property>
+					<name>!messaging.service</name>
+				</property>
+			</activation>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.learning</groupId>
+					<artifactId>tacocloud-messaging-artemis</artifactId>
+					<version>${tacocloud.version}</version>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+
 	<build>
 		<plugins>
 			<plugin>

@@ -28,12 +28,26 @@
 		<module>data</module>
 		<module>security</module>
 		<module>messaging-common</module>
-		<module>messaging-artemis</module>
 		<module>kitchen</module>
 		<module>web</module>
 		<module>api</module>
 		<module>app</module>
 	</modules>
+
+	<profiles>
+		<profile>
+			<id>artemis</id>
+			<activation>
+				<property>
+					<name>!messaging.service</name>
+				</property>
+			</activation>
+
+			<modules>
+				<module>messaging-artemis</module>
+			</modules>
+		</profile>
+	</profiles>
 
 	<dependencies>
 		<dependency>

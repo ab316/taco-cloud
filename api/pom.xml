@@ -35,12 +35,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.learning</groupId>
-			<artifactId>tacocloud-messaging-artemis</artifactId>
-			<version>${tacocloud.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
