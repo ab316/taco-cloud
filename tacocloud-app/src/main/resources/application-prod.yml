@@ -1,4 +1,7 @@
 logging:
+  path: /var/logs/
+  file: tacoCloud.log
+
   level:
     root: WARN
     com.learning.tacocloud: INFO

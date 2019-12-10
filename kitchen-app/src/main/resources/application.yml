@@ -2,9 +2,6 @@ server:
   port: 8081
 
 logging:
-  path: /var/logs/
-  file: tacoKitchen.log
-
   level:
     root: INFO
     com.learning.tacocloud: DEBUG

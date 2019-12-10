@@ -2,9 +2,6 @@ server:
   port: 8080
 
 logging:
-  path: /var/logs/
-  file: tacoCloud.log
-
   level:
     root: INFO
     com.learning.tacocloud: DEBUG
