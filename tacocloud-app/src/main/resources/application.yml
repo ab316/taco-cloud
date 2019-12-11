@@ -22,6 +22,15 @@ spring:
     password: admin
     mode: native
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    template:
+      exchange: tacocloud.orders
+      routing-key: kitchens.central
+
 taco:
   orders:
     pageSize: 10

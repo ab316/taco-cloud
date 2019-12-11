@@ -52,7 +52,8 @@
 			<id>artemis</id>
 			<activation>
 				<property>
-					<name>!messaging.service</name>
+					<name>messaging.service</name>
+					<value>artemis</value>
 				</property>
 			</activation>
 
@@ -60,6 +61,23 @@
 				<dependency>
 					<groupId>com.learning.tacocloud</groupId>
 					<artifactId>tacocloud-messaging-artemis</artifactId>
+					<version>${tacocloud.version}</version>
+				</dependency>
+			</dependencies>
+		</profile>
+
+		<profile>
+			<id>rabbitmq</id>
+			<activation>
+				<property>
+					<name>!messaging.service</name>
+				</property>
+			</activation>
+
+			<dependencies>
+				<dependency>
+					<groupId>com.learning.tacocloud</groupId>
+					<artifactId>tacocloud-messaging-rabbitmq</artifactId>
 					<version>${tacocloud.version}</version>
 				</dependency>
 			</dependencies>

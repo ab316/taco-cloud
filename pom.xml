@@ -39,12 +39,26 @@
 			<id>artemis</id>
 			<activation>
 				<property>
-					<name>!messaging.service</name>
+					<name>messaging.service</name>
+					<value>artemis</value>
 				</property>
 			</activation>
 
 			<modules>
 				<module>messaging-artemis</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>rabbitmq</id>
+			<activation>
+				<property>
+					<name>!messaging.service</name>
+				</property>
+			</activation>
+
+			<modules>
+				<module>messaging-rabbitmq</module>
 			</modules>
 		</profile>
 	</profiles>

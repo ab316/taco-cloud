@@ -7,6 +7,8 @@ logging:
     com.learning.tacocloud: DEBUG
 
 spring:
+  profiles.include: @includeSpringProfile@
+
   thymeleaf:
     cache: false
 
@@ -16,3 +18,12 @@ spring:
     user: admin
     password: admin
     mode: native
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    template:
+      exchange: tacocloud.orders
+      routing-key: kitchens.central

@@ -28,7 +28,9 @@ The following features are currently present in the project
 * User registration / login
 * Design Taco MVC
 * Order Tacos MVC
-* Messaging from Taco Cloud to Taco Kitchen
+* Messaging from Taco Cloud to Taco Kitchen using
+    * Artemis (JMS)
+    * RabbitMQ (AMPQ). Default choice
 
 ## To Run
 ### Taco Cloud
@@ -41,10 +43,24 @@ mvn spring-boot:run -f app
 mvn spring-boot:run -f kitchen
 ```
 
-### Artemis Docker Container
+### Messaging Setup
+#### Artemis
+Launch the container using the command below
 ```
 docker run -it -d --rm \
 -e ARTEMIS_USERNAME=admin -e ARTEMIS_PASSWORD=admin \
 -p 8161:8161 -p 61616:61616 \
 --name artemis vromero/activemq-artemis
+```
+
+#### RabbitMQ
+1. Launch the container using the command below
+1. Create an exchange `tacocloud.orders`
+3. Create a queue `tacocloud.order.queue`
+4. Bind the queue to the exchange with the routing key `tacocloud.order`
+```
+docker run -d --name rabbitmq  \
+-p 5672:5672 -p 15672:15672 \
+-e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin \
+rabbitmq:3-management
 ```

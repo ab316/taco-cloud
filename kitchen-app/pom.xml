@@ -29,17 +29,44 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.learning.tacocloud</groupId>
-			<artifactId>tacocloud-messaging-common</artifactId>
-			<version>${tacocloud.version}</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-artemis</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>com.learning.tacocloud</groupId>
-			<artifactId>tacocloud-messaging-artemis</artifactId>
-			<version>${tacocloud.version}</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>artemis</id>
+			<activation>
+				<property>
+					<name>messaging.service</name>
+					<value>artemis</value>
+				</property>
+			</activation>
+
+			<properties>
+				<includeSpringProfile>artemis-profile</includeSpringProfile>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>rabbitmq</id>
+			<activation>
+				<property>
+					<name>!messaging.service</name>
+				</property>
+			</activation>
+
+			<properties>
+				<includeSpringProfile>rabbitmq-profile</includeSpringProfile>
+			</properties>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
