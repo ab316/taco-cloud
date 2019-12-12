@@ -15,33 +15,45 @@ The project uses the following technologies:
 * H2 in-memory database
 * Thymeleaf
 * JMS (Artemis)
+* AMQP (RabbitMQ)
 
 The project demonstrates the following:
 * Spring MVC using Thymeleaf
 * Spring Security with JPA based user credentials
 * Spring Profiles (different application properties for dev/qa/prod)
-* Spring JMS messaging with Artemis
+* Spring JMS messaging with Artemis and RabbitMQ
 
 
 ## Application
-The following features are currently present in the project
+The following features are present in the project
 * User registration / login
 * Design Taco MVC
 * Order Tacos MVC
 * Messaging from Taco Cloud to Taco Kitchen using
     * Artemis (JMS)
-    * RabbitMQ (AMPQ). Default choice
+    * RabbitMQ (AMQP). Default choice
+    
+The project consists of two separate applications
+1. Taco Cloud
+2. Taco Kitchen
+
+Taco Cloud is the main application containing all the features. Taco Kitchen is a
+small application that only listens from messages from Taco Cloud
 
 ## To Run
 ### Taco Cloud
 ```
-mvn spring-boot:run -f app
+mvn spring-boot:run -f tacocloud-app
 ```
 
 ### Taco Kitchen
 ```
 mvn spring-boot:run -f kitchen
 ```
+
+To change the messaging service from rabbitMQ to artemis add the below
+argument to the maven commands for both apps:
+`-Dmessaging.service=artemis`
 
 ### Messaging Setup
 #### Artemis
