@@ -34,3 +34,13 @@ spring:
 taco:
   orders:
     pageSize: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  endpoint:
+    health:
+      showDetails: always
