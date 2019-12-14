@@ -44,3 +44,7 @@ management:
   endpoint:
     health:
       showDetails: always
+
+  info:
+    git:
+      mode: full

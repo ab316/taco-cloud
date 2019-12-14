@@ -27,3 +27,17 @@ spring:
     template:
       exchange: tacocloud.orders
       routing-key: kitchens.central
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  endpoint:
+    health:
+      showDetails: always
+
+  info:
+    git:
+      mode: full
